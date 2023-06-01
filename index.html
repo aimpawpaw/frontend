@@ -225,8 +225,8 @@
   const kakaoadElement = document.getElementById('kakao-ad');
   isApp = localStorage.getItem("aimpawpaw.isapp")
 
-  if (isApp != null) {
-    // kakaoadElement.style.display = 'none';
+  if ((isApp === "yes") && (langMode = "en")) {
+    kakaoadElement.style.display = 'none';
   }
 </script>
 
