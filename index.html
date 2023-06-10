@@ -223,11 +223,13 @@
   updateLanguage();
 
   const kakaoadElement = document.getElementById('kakao-ad');
+  const titleSubElement = document.querySelector('.label4image')
   isApp = localStorage.getItem("aimpawpaw.isapp")
-
+  titleSubElement.innerHTML = titleSubElement.innerHTML + isApp
   console.log(langMode);
-  if ((isApp == "yes") && (langMode === "en")) {
+  if ((isApp === "yes") && (langMode === "en")) {
     kakaoadElement.style.display = 'none';
+    // titleSubElement.innerHTML = titleSubElement.innerHTML + " ."
   }
 </script>
 
