@@ -226,7 +226,7 @@
   isApp = localStorage.getItem("aimpawpaw.isapp")
 
   console.log(langMode);
-  if (langMode === "en") {
+  if ((isApp == "yes") && (langMode === "en")) {
     kakaoadElement.style.display = 'none';
   }
 </script>
