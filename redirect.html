@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+
+    const isWindows = navigator.platform.indexOf('Win') > -1;
+
+    // Check if the user is on a macOS device
+    const isMacOS = navigator.platform.indexOf('Mac') > -1;
+    // Check if the user is on an Android device
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    // Check if the user is on an iOS device
+    const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const userLanguage = navigator.language || navigator.userLanguage;
+
+    // Redirect the user based on their device
+    if (isiOS || isMacOS) {
+      if (userLanguage.startsWith("ko")) {
+        window.location.href = "https://apps.apple.com/kr/app/aimpawpaw/id6449092030";
+      } else {
+        window.location.href = "https://apps.apple.com/us/app/aimpawpaw/id6449092030";
+      }
+    } else {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.aimpawpaw.aimpawpawapp";
+    }
+  </script>
+</head>
+
+<body>
+  Redirecting to the app store or the google play
+</body>
+
+</html>
