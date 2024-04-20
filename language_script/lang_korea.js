@@ -1,3 +1,5 @@
+import { URL_QUERY } from './common.js';
+
 const titleElement = document.getElementById("title")
 titleElement.innerText = "반려동물 집사들의 든든한 AI 동반자 - 아임포포 AIm PawPaw.";
 
@@ -170,7 +172,7 @@ const chatForm = document.querySelector("#chat-form");
 const timeTag = document.querySelector(".notice");
 
 // const URL_QUERY = "http://127.0.0.1:3000/query";
-const URL_QUERY = "https://port-0-aimpawpaw-backend-f69b2mlh9avo22.sel4.cloudtype.app/query";
+// const URL_QUERY = "https://port-0-aimpawpaw-backend-f69b2mlh9avo22.sel4.cloudtype.app/query";
 
 const messageChains = [];
 let chatCnt = 0;
@@ -394,7 +396,7 @@ async function addErrorMessage(message) {
 }
 
 async function showAssistantFetching() {
-  innerHTML = `<i class="fa fa-paw a" aria-hidden="true" ></i>
+  const innerHTML = `<i class="fa fa-paw a" aria-hidden="true" ></i>
   <i class="fa fa-paw b" aria-hidden="true" ></i>
   <i class="fa fa-paw c" aria-hidden="true" ></i>
   <i class="fa fa-paw d" aria-hidden="true" ></i>
@@ -418,6 +420,8 @@ async function fetchMessage() {
 
   inputDisabled(true);
 
+  let requestMessage;
+
   if (messageChains.length > 5) {
     requestMessage = [messageChains[0], ...messageChains.slice(-3)];
 
@@ -428,7 +432,7 @@ async function fetchMessage() {
   console.log(`[messageChains]\n`, messageChains);
   console.log(`[requestMessage]\n`, requestMessage);
 
-  bodyData = JSON.stringify({ language: "ko", messageChains: [...messageChains] });
+  const bodyData = JSON.stringify({ language: "ko", messageChains: [...messageChains] });
 
   const response = await fetch(URL_QUERY, {
     method: "POST",
