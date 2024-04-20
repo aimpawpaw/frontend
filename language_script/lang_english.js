@@ -1,4 +1,11 @@
-import { URL_QUERY } from './common.js';
+// import { URL_QUERY } from './common.js';
+
+/**handler */
+// document.getElementById("btnLanguage").addEventListener('click', handleLanguage);
+// document.getElementById("btnLanguage").addEventListener('touchstart', handleLanguage);
+
+// document.getElementById("btnRefresh").addEventListener('click', handleRefreshChecker);
+// document.getElementById("btnRefresh").addEventListener('touchstart', handleRefreshChecker);
 
 const titleElement = document.getElementById("title")
 titleElement.innerText = "AI Messenger for Pet Pals - AIm PawPaw ";
@@ -544,25 +551,6 @@ chatForm.addEventListener("change", (event) => {
 });
 
 
-function handleFgContainer() {
-  const fgContainer = document.querySelector("#fg-container");
-  fgContainer.style.display =
-    (fgContainer.style.display === "none" || fgContainer.style.display === "") ? "block" : "none";
-}
-
-function handleRefreshChecker() {
-  const refreshChecker = document.querySelector("#refresh-checker");
-  refreshChecker.style.display =
-    (refreshChecker.style.display === "none" || refreshChecker.style.display === "") ? "block" : "none";
-}
-
-
-function handleLanguage() {
-  const refreshForLanguage = document.querySelector("#refresh-for-language");
-
-  refreshForLanguage.style.display =
-    (refreshForLanguage.style.display === "none" || refreshForLanguage.style.display === "") ? "block" : "none";
-}
 
 function changeLanguage() {
   localStorage.setItem("aimpawpaw.language", "ko");
