@@ -217,6 +217,7 @@
   const importScript = (scriptSrc) => {
     const script = document.createElement("script");
     script.src = scriptSrc;
+    script.type = "module";
     document.head.appendChild(script);
   }
 
