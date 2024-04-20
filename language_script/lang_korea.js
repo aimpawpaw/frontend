@@ -1,4 +1,4 @@
-import { URL_QUERY } from './common.js';
+// import { URL_QUERY } from './common.js';
 
 const titleElement = document.getElementById("title")
 titleElement.innerText = "반려동물 집사들의 든든한 AI 동반자 - 아임포포 AIm PawPaw.";
@@ -538,25 +538,25 @@ chatForm.addEventListener("change", (event) => {
 });
 
 
-function handleFgContainer() {
-  const fgContainer = document.querySelector("#fg-container");
-  fgContainer.style.display =
-    (fgContainer.style.display === "none" || fgContainer.style.display === "") ? "block" : "none";
-}
+// function handleFgContainer() {
+//   const fgContainer = document.querySelector("#fg-container");
+//   fgContainer.style.display =
+//     (fgContainer.style.display === "none" || fgContainer.style.display === "") ? "block" : "none";
+// }
 
-function handleRefreshChecker() {
-  const refreshChecker = document.querySelector("#refresh-checker");
-  refreshChecker.style.display =
-    (refreshChecker.style.display === "none" || refreshChecker.style.display === "") ? "block" : "none";
-}
+// function handleRefreshChecker() {
+//   const refreshChecker = document.querySelector("#refresh-checker");
+//   refreshChecker.style.display =
+//     (refreshChecker.style.display === "none" || refreshChecker.style.display === "") ? "block" : "none";
+// }
 
 
-function handleLanguage() {
-  const refreshForLanguage = document.querySelector("#refresh-for-language");
+// function handleLanguage() {
+//   const refreshForLanguage = document.querySelector("#refresh-for-language");
 
-  refreshForLanguage.style.display =
-    (refreshForLanguage.style.display === "none" || refreshForLanguage.style.display === "") ? "block" : "none";
-}
+//   refreshForLanguage.style.display =
+//     (refreshForLanguage.style.display === "none" || refreshForLanguage.style.display === "") ? "block" : "none";
+// }
 
 function changeLanguage() {
   localStorage.setItem("aimpawpaw.language", "en");
