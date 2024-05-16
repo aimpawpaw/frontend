@@ -483,7 +483,6 @@ async function preHeatingFetch() {
   let requestMessage;
   requestMessage = messageChains;
 
-
   const bodyData = JSON.stringify({ language: "ko", messageChains: [...messageChains] });
 
   const response = await fetch(URL_QUERY, {
@@ -500,6 +499,7 @@ async function preHeatingFetch() {
 
       return reader.read().then(function processText({ done, value }) {
         result += new TextDecoder().decode(value || new Uint8Array());
+        console.log("+");
       })
     })
     .catch(error => {
