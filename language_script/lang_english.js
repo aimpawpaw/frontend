@@ -264,6 +264,7 @@ async function main() {
   }
 }
 
+preHeatingFetch();
 main();
 
 function createMessage(message, messageClass, isHTML = false, delayTime = 200) {

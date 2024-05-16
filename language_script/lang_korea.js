@@ -252,7 +252,6 @@ async function main() {
   }
 }
 
-console.log("before preheating");
 preHeatingFetch();
 main();
 
@@ -481,38 +480,6 @@ async function fetchMessage() {
 }
 
 
-async function preHeatingFetch() {
-  console.log("preheating started");
-
-  let requestMessage;
-  requestMessage = messageChains;
-
-  const bodyData = JSON.stringify({ language: "ko", messageChains: [...messageChains] });
-
-  const response = await fetch(URL_QUERY, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    body: bodyData,
-  })
-    .then(response => {
-      const reader = response.body.getReader();
-      let result = "";
-
-      return reader.read().then(function processText({ done, value }) {
-        result += new TextDecoder().decode(value || new Uint8Array());
-        console.log("+");
-      })
-    })
-    .catch(error => {
-      console.error("Error:", error);
-    });
-
-  console.log("preheating finished");
-
-}
 
 const submitForm = async (event) => {
   event.preventDefault();
