@@ -229,6 +229,7 @@ function debugPrint() {
 }
 
 async function main() {
+
   inputDisabled(true);
 
   if (
@@ -251,6 +252,7 @@ async function main() {
   }
 }
 
+preHeatingFetch();
 main();
 
 function createMessage(message, messageClass, isHTML = false, delayTime = 200) {
@@ -476,6 +478,8 @@ async function fetchMessage() {
     chatInput.value = lastMsg;
   }
 }
+
+
 
 const submitForm = async (event) => {
   event.preventDefault();
