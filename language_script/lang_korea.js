@@ -477,6 +477,36 @@ async function fetchMessage() {
   }
 }
 
+
+async function preHeatingFetch() {
+
+  let requestMessage;
+  requestMessage = messageChains;
+
+
+  const bodyData = JSON.stringify({ language: "ko", messageChains: [...messageChains] });
+
+  const response = await fetch(URL_QUERY, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+    },
+    body: bodyData,
+  })
+    .then(response => {
+      const reader = response.body.getReader();
+      let result = "";
+
+      return reader.read().then(function processText({ done, value }) {
+        result += new TextDecoder().decode(value || new Uint8Array());
+      })
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
+}
+
 const submitForm = async (event) => {
   event.preventDefault();
   const originalMessage = chatEventInput.value.trim();
