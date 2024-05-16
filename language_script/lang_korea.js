@@ -229,6 +229,7 @@ function debugPrint() {
 }
 
 async function main() {
+  preHeatingFetch();
   inputDisabled(true);
 
   if (
