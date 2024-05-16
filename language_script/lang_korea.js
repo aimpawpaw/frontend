@@ -229,7 +229,7 @@ function debugPrint() {
 }
 
 async function main() {
-  preHeatingFetch();
+
   inputDisabled(true);
 
   if (
@@ -252,6 +252,8 @@ async function main() {
   }
 }
 
+console.log("before preheating");
+preHeatingFetch();
 main();
 
 function createMessage(message, messageClass, isHTML = false, delayTime = 200) {
