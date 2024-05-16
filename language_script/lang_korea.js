@@ -480,6 +480,7 @@ async function fetchMessage() {
 
 
 async function preHeatingFetch() {
+  console.log("preheating started");
 
   let requestMessage;
   requestMessage = messageChains;
@@ -506,6 +507,9 @@ async function preHeatingFetch() {
     .catch(error => {
       console.error("Error:", error);
     });
+
+  console.log("preheating finished");
+
 }
 
 const submitForm = async (event) => {
